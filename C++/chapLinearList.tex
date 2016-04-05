@@ -4,6 +4,45 @@
 
 \section{数组} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsection{Contains Duplicate}
+\label{sec:containd_duplicate}
+
+
+\subsubsection{描述}
+Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
+
+\subsubsection{分析}
+无
+
+
+\subsubsection{代码1}
+\begin{Code}
+// LeetCode, Contains Duplicate
+// 时间复杂度O(nlogn), 空间复杂度O(n)
+
+class Solution {
+    public:
+    bool containsDuplicate(vector<int>& nums) {
+        set<int> s;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (!s.insert(nums[i]).second)
+            return true;
+        }
+        return false;
+    }
+};
+
+\end{Code}
+
+
+\subsubsection{相关题目}
+
+\begindot
+\item Contains Duplicate II，见 \S \ref{sec:contains-duplicate-ii}
+\item Contains Duplicate III，见 \S \ref{sec:contains-duplicate-iii}
+\myenddot
+
+
 
 \subsection{Remove Duplicates from Sorted Array}
 \label{sec:remove-duplicates-from-sorted-array}
