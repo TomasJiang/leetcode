@@ -5,7 +5,7 @@
 \section{数组} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Contains Duplicate}
-\label{sec:containd_duplicate}
+\label{sec:containd-duplicate}
 
 
 \subsubsection{描述}
@@ -42,6 +42,76 @@ class Solution {
 \item Contains Duplicate III，见 \S \ref{sec:contains-duplicate-iii}
 \myenddot
 
+
+\subsection{Contains Duplicate II}
+\label{sec:containd-duplicate-ii}
+
+
+\subsubsection{描述}
+Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and the difference between i and j is at most k.
+
+\subsubsection{分析}
+无
+
+
+\subsubsection{代码1}
+\begin{Code}
+// LeetCode, Contains Duplicate
+// 时间复杂度O(nlogn), 空间复杂度O(n)
+
+class Solution {
+    public:
+    bool containsNearbyDuplicate(vector<int>& nums, int k) {
+        set<int> s;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (i > k) {
+                s.erase(nums[i-k-1]);
+
+            }
+            if (!s.insert(nums[i]).second) {
+                return true;
+            }
+        }
+        return false;
+    }
+};
+
+\end{Code}
+
+
+\subsubsection{相关题目}
+
+\begindot
+\item Contains Duplicate，见 \S \ref{sec:contains-duplicate}
+\item Contains Duplicate III，见 \S \ref{sec:contains-duplicate-iii}
+\myenddot
+
+\subsection{Contains Duplicate III}
+\label{sec:containd-duplicate-iii}
+
+
+\subsubsection{描述}
+Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference between nums[i] and nums[j] is at most t and the difference between i and j is at most k.
+
+\subsubsection{分析}
+无
+
+
+\subsubsection{代码1}
+\begin{Code}
+// LeetCode, Contains Duplicate
+// 时间复杂度O(nlogn), 空间复杂度O(n)
+
+
+\end{Code}
+
+
+\subsubsection{相关题目}
+
+\begindot
+\item Contains Duplicate，见 \S \ref{sec:contains-duplicate}
+\item Contains Duplicate II，见 \S \ref{sec:contains-duplicate-ii}
+\myenddot
 
 
 \subsection{Remove Duplicates from Sorted Array}
